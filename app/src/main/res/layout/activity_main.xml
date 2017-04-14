@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        toolbar改成深色主题其实改的是显示的字体颜色，而不是所谓的背景-->
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/tb"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="6dp" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/xf_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:src="@mipmap/gith" />
+
+
+    </android.support.design.widget.CoordinatorLayout>
+
+    <!--可以通过android:layout_gravity="start"和layout_width的设置来对DrawerLayout宽度进行控制-->
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/head_view"
+        app:menu="@menu/nav_menu" />
+
+
+</android.support.v4.widget.DrawerLayout>
+
+
